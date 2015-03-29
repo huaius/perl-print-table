@@ -20,6 +20,8 @@ sub table {
         $format .= "\%-$i".'s';
         $break .= '=' x $i;
     }
+    $format .= "\n";
+    $break .= "\n";
     print(sprintf($format,@$titles));
     print($break);
     for my $value (@$values){
@@ -75,3 +77,8 @@ sub table1 {
 
     return;
 }
+
+
+my $values = [{'name' => 'john','age' => '19'},{'name' => 'kate','age' => '18'},{'name' => 'anderson','age' => '20'}];
+my $titles = ['name','age'];
+table($values,$titles);
